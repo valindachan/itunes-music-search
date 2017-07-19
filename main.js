@@ -8,10 +8,15 @@
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
 
-let url = "https://itunes.apple.com/search?term=jack+johnson&limit=25"
+let search = document
+  .querySelector("form.search-form")
+  .addEventListener("submit", search)
+
+let url = "https://itunes.apple.com/search?term="
 
 // let value = document.querySelector("#searchBox").value
-// url += value
+
+let searchValue = "jack+johnson"
 
 let artistName
 let trackName
@@ -21,6 +26,9 @@ let collectionName // Album name
 
 // Select and store the information we want to work with
 fetch(url).then(response => response.json()).then(data => {
+  url = `${url}${searchValue}&limit=15`
+  console.log(url)
+
   for (var i = 0; i < data.results.length; i++) {
     artistName = data.results[i].artistName
     trackName = data.results[i].trackName
@@ -29,4 +37,8 @@ fetch(url).then(response => response.json()).then(data => {
     collectionName = data.results[i].collectionName
     console.log(collectionName)
   }
+
+  // Reset url for search
+  url = ""
+  console.log(url)
 })
