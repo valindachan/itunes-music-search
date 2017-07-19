@@ -15,7 +15,7 @@
 function search() {
   let url = "https://itunes.apple.com/search?term="
   let searchValue = document.querySelector("#searchBox").value
-  // let searchValue = "bruno"
+
   url = `${url}${searchValue}&limit=15`
   console.log(url)
 
@@ -32,9 +32,9 @@ function search() {
       artistName = data.results[i].artistName
       trackName = data.results[i].trackName
       artworkUrl100 = data.results[i].artworkUrl100
-      previewUrl = data.results[i].previewUrXl
+      previewUrl = data.results[i].previewUrl
       collectionName = data.results[i].collectionName
-      console.log(collectionName)
+      console.log(previewUrl)
     }
     // Reset url for search
     url = "https://itunes.apple.com/search?term="
