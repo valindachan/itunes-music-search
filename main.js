@@ -8,9 +8,9 @@
 // 4. Create a way to append the fetch results to your page
 // 5. Create a way to listen for a click that will play the song in the audio play
 
-let search = document
-  .querySelector("form.search-form")
-  .addEventListener("submit", search)
+// let search = document
+//   .querySelector("form.search-form")
+//   .addEventListener("submit", search)
 
 let url = "https://itunes.apple.com/search?term="
 

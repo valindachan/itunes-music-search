@@ -3,6 +3,7 @@
 <head>
   <title>iTunes Music Search</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 </head>
 <body>
   <div class="container">
@@ -10,12 +11,17 @@
       <h1>Really Awesome Music Site</h1>
     </header>
     <section class="player">
-      <audio class="music-player" controls="controls" src=""></audio>
+      <audio class="music-player" controls="controls" src="#"></audio>
+      <div id=“search-input”>
+        <h5>Now Playing:The Train - Noise Ratchet</h5>
+      </div>
+      <hr>
     </section>
     <section class="search">
-      <form class="search-form">
-
-      </form>
+      <input type="text" name="search" id="searchBox" placeholder="Search by Artist.." onKeyPress="return checkSubmit(event)"/>
+      <button type="submit" id="searchButton" onclick="search()">
+        <i class="fa fa-search" aria-hidden="true">Search</i>
+      </button>
     </section>
     <section class="results"></section>
   </div>
