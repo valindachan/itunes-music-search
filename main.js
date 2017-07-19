@@ -14,31 +14,38 @@
 
 let url = "https://itunes.apple.com/search?term="
 
-// let value = document.querySelector("#searchBox").value
+function search() {
+  let searchValue = document.querySelector("#searchBox").value
+  console.log(searchValue)
 
-let searchValue = "jack+johnson"
+  let artistName
+  let trackName
+  let artworkUrl100
+  let previewUrl
+  let collectionName // Album name
 
-let artistName
-let trackName
-let artworkUrl100
-let previewUrl
-let collectionName // Album name
+  // Select and store the information we want to work with
+  fetch(url).then(response => response.json()).then(data => {
+    url = `${url}${searchValue}&limit=15`
+    console.log(url)
 
-// Select and store the information we want to work with
-fetch(url).then(response => response.json()).then(data => {
-  url = `${url}${searchValue}&limit=15`
-  console.log(url)
+    for (var i = 0; i < data.results.length; i++) {
+      artistName = data.results[i].artistName
+      trackName = data.results[i].trackName
+      artworkUrl100 = data.results[i].artworkUrl100
+      previewUrl = data.results[i].previewUrXl
+      collectionName = data.results[i].collectionName
+      console.log(collectionName)
+    }
 
-  for (var i = 0; i < data.results.length; i++) {
-    artistName = data.results[i].artistName
-    trackName = data.results[i].trackName
-    artworkUrl100 = data.results[i].artworkUrl100
-    previewUrl = data.results[i].previewUrXl
-    collectionName = data.results[i].collectionName
-    console.log(collectionName)
+    // Reset url for search
+    url = "https://itunes.apple.com/search?term="
+  })
+}
+
+// If 'Enter' key is hit, start searching input typed in
+function checkSubmit(e) {
+  if (e && e.keyCode == 13) {
+    search()
   }
-
-  // Reset url for search
-  url = ""
-  console.log(url)
-})
+}
