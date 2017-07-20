@@ -40,11 +40,11 @@ function search() {
       collectionName = data.results[i].collectionName;
 
 
-      let artistNameText = document.createElement('span');
-      let trackNameText = document.createElement('span');
+      let artistNameText = document.createElement('h2');
+      let trackNameText = document.createElement('h3');
       let artworkUrl100Img = document.createElement('img');
       let anchorContainer = document.createElement('a');
-      let collectionNameText = document.createElement('span');
+      let collectionNameText = document.createElement('h4');
       let resultContainer = document.createElement('div');
 
 
@@ -53,6 +53,10 @@ function search() {
       artworkUrl100Img.src = artworkUrl100;
       collectionNameText.textContent = collectionName;
       anchorContainer.href = anchor;
+
+      
+
+
 
 
       anchorContainer.appendChild(artistNameText);
