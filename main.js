@@ -26,49 +26,38 @@ function search() {
   let collectionName // Album name
   // console.log(data)
 
-  let results = document.querySelector('.results');
+  let results = document.querySelector(".results")
 
   // Select and store the information we want to work with
-  fetch(url).then((response) => response.json() ).then( (data) => {
-
+  fetch(url).then(response => response.json()).then(data => {
     for (var i = 0; i < data.results.length; i++) {
-      artistName = data.results[i].artistName;
-      trackName = data.results[i].trackName;
-      artworkUrl100 = data.results[i].artworkUrl100;
-      previewUrl = data.results[i].previewUrl;
-      anchor = "#";
-      collectionName = data.results[i].collectionName;
+      artistName = data.results[i].artistName
+      trackName = data.results[i].trackName
+      artworkUrl100 = data.results[i].artworkUrl100
+      previewUrl = data.results[i].previewUrl
+      anchor = "#"
+      collectionName = data.results[i].collectionName
 
+      let artistNameText = document.createElement("h2")
+      let trackNameText = document.createElement("h3")
+      let artworkUrl100Img = document.createElement("img")
+      let anchorContainer = document.createElement("a")
+      let collectionNameText = document.createElement("h4")
+      let resultContainer = document.createElement("div")
 
-      let artistNameText = document.createElement('h2');
-      let trackNameText = document.createElement('h3');
-      let artworkUrl100Img = document.createElement('img');
-      let anchorContainer = document.createElement('a');
-      let collectionNameText = document.createElement('h4');
-      let resultContainer = document.createElement('div');
+      artworkUrl100Img.src = artworkUrl100
+      trackNameText.textContent = trackName
+      artistNameText.textContent = artistName
+      collectionNameText.textContent = collectionName
+      anchorContainer.href = anchor
 
+      anchorContainer.appendChild(artworkUrl100Img)
+      anchorContainer.appendChild(trackNameText)
+      anchorContainer.appendChild(artistNameText)
+      resultContainer.appendChild(anchorContainer)
+      results.appendChild(resultContainer)
 
-      artistNameText.textContent = artistName;
-      trackNameText.textContent = trackName;
-      artworkUrl100Img.src = artworkUrl100;
-      collectionNameText.textContent = collectionName;
-      anchorContainer.href = anchor;
-
-      
-
-
-
-
-      anchorContainer.appendChild(artistNameText);
-      anchorContainer.appendChild(trackNameText);
-      anchorContainer.appendChild(artworkUrl100Img);
-      resultContainer.appendChild(anchorContainer);
-      results.appendChild(resultContainer);
-
-
-      console.log(results);
-
-
+      console.log(results)
     }
 
     url = "https://itunes.apple.com/search?term="
