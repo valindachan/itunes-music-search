@@ -2,8 +2,10 @@ body {
   background-image: url(images/livebandfade.jpg);
   position: fixed;
   background-size: cover;
+  width: 100%;
   text-align: center;
-  padding: 0 2em 0 2em;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -14,6 +16,7 @@ h1 {
   font-size: 54px;
   font-weight: 600;
   text-transform: capitalize;
+  text-shadow: 1px 1px 5px blue;
 }
 
 h5 {
@@ -21,13 +24,17 @@ h5 {
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
+  padding-bottom: 3em;
+  border-bottom: 3px solid blue;
+  margin: 1em 2em;
 }
 
-hr {
-  border: 2px;
-  border-color: black;
-  padding-bottom: 1em;
-}
+/*hr {
+  border-top-width: medium;
+  border-radius: 2px;
+  border-color: blue;
+  margin: 0 2em 1em 2em;
+}*/
 
 .player {
 }
@@ -45,18 +52,34 @@ input {
   border-radius: 12px;
   border: 1px solid blue;
   padding: .5em 0;
-  margin-bottom: 1em;
+  margin: 1em 0;
+  /*border-top: 3px solid blue;
+  border-bottom: 2px solid blue;*/
 }
 
 button {
-  font-family: 'Roboto', serif;
+  /*font-family: 'Roboto', serif;*/
   padding: .5em 0;
-  margin-bottom: 1em;
   border-radius: 12px;
-  width: 100px;
+  width: 50px;
   border: 1px solid blue;
   background-color: white;
 }
 
 .results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.artist {
+  flex-basis: 25%;
+  padding-top: 2em;
+}
+
+img {
+  border: 2px solid #9a1111;
+  border-radius: 4px;
+  width: 100px;
+  height: 100px;
 }
