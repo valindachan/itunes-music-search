@@ -17,7 +17,7 @@ function search() {
   let searchValue = document.querySelector("#searchBox").value
 
   url = `${url}${searchValue}&limit=15`
-  console.log(url)
+  // console.log(url)
 
   let artistName
   let trackName
@@ -26,17 +26,47 @@ function search() {
   let collectionName // Album name
   // console.log(data)
 
+  let results = document.querySelector('.results');
+
   // Select and store the information we want to work with
-  fetch(url).then(response => response.json()).then(data => {
+  fetch(url).then((response) => response.json() ).then( (data) => {
+
     for (var i = 0; i < data.results.length; i++) {
-      artistName = data.results[i].artistName
-      trackName = data.results[i].trackName
-      artworkUrl100 = data.results[i].artworkUrl100
-      previewUrl = data.results[i].previewUrl
-      collectionName = data.results[i].collectionName
-      console.log(previewUrl)
+      artistName = data.results[i].artistName;
+      trackName = data.results[i].trackName;
+      artworkUrl100 = data.results[i].artworkUrl100;
+      previewUrl = data.results[i].previewUrl;
+      anchor = "#";
+      collectionName = data.results[i].collectionName;
+
+
+      let artistNameText = document.createElement('span');
+      let trackNameText = document.createElement('span');
+      let artworkUrl100Img = document.createElement('img');
+      let anchorContainer = document.createElement('a');
+      let collectionNameText = document.createElement('span');
+      let resultContainer = document.createElement('div');
+
+
+      artistNameText.textContent = artistName;
+      trackNameText.textContent = trackName;
+      artworkUrl100Img.src = artworkUrl100;
+      collectionNameText.textContent = collectionName;
+      anchorContainer.href = anchor;
+
+
+      anchorContainer.appendChild(artistNameText);
+      anchorContainer.appendChild(trackNameText);
+      anchorContainer.appendChild(artworkUrl100Img);
+      resultContainer.appendChild(anchorContainer);
+      results.appendChild(resultContainer);
+
+
+      console.log(results);
+
+
     }
-    // Reset url for search
+
     url = "https://itunes.apple.com/search?term="
   })
 }
