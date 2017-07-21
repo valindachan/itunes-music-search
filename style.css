@@ -1,12 +1,18 @@
 body {
   background-image: url(images/livebandfade.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
-  /*background-size: cover;*/
   width: 100%;
   text-align: center;
   padding: 0;
   margin: 0;
+}
+
+.logo img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2em;
+  border: 0;
 }
 
 h1 {
@@ -24,7 +30,7 @@ h5 {
   font-weight: 600;
   text-transform: capitalize;
   padding-bottom: 3em;
-  border-bottom: 3px solid blue;
+  border-bottom: 3px solid #bcce2b;
   margin: 1em 2em;
 }
 
@@ -42,9 +48,10 @@ input {
   align-content: center;
   width: 400px;
   border-radius: 12px;
-  border: 1px solid blue;
+  border: 1px solid #bcce2b;
   padding: .5em 0;
   margin: 1em 0;
+  box-shadow: -.5px -.5px 7px black;
   /*border-top: 3px solid blue;
   border-bottom: 2px solid blue;*/
 }
@@ -54,8 +61,9 @@ button {
   padding: .5em 0;
   border-radius: 12px;
   width: 50px;
-  border: 1px solid blue;
+  border: 1px solid #bcce2b;
   background-color: white;
+  box-shadow: -.5px -.5px 7px black;
 }
 /*
 
@@ -81,7 +89,7 @@ button {
 }
 
 img {
-  border: 2px solid blue;
+  border: 2px solid #bcce2b;
   border-radius: 4px;
   width: 75px;
   height: 75px;
@@ -93,21 +101,23 @@ h2 {
   font-family: 'Roboto', serif;
   font-size: 12px;
   font-weight: 400;
+  margin-top: -10px;
 }
 
 h3 {
   font-family: 'Roboto', serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   text-shadow: 1px 1px 5px white;
   margin: .5em 1em 0 1em;
-  line-height: 16px;
+  line-height: 14px;
 }
 
 h4 {
   font-family: 'Roboto', serif;
   font-size: 10px;
   font-weight: 400;
+  margin-top: 2px;
 }
 
 a {
