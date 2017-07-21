@@ -86,13 +86,13 @@ img {
   width: 75px;
   height: 75px;
   margin-top: 2em;
+  box-shadow: -2px -2px 5px 0px white;
 }
 
 h2 {
   font-family: 'Roboto', serif;
   font-size: 12px;
   font-weight: 400;
-  line-height: 4px;
 }
 
 h3 {
@@ -101,6 +101,13 @@ h3 {
   font-weight: 600;
   text-shadow: 1px 1px 5px white;
   margin: .5em 1em 0 1em;
+  line-height: 16px;
+}
+
+h4 {
+  font-family: 'Roboto', serif;
+  font-size: 10px;
+  font-weight: 400;
 }
 
 a {
