@@ -1,14 +1,12 @@
 body {
   background-image: url(images/livebandfade.jpg);
-  position: fixed;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*background-size: cover;*/
   width: 100%;
   text-align: center;
   padding: 0;
   margin: 0;
-}
-
-.container {
 }
 
 h1 {
@@ -17,6 +15,7 @@ h1 {
   font-weight: 600;
   text-transform: capitalize;
   text-shadow: 1px 1px 5px blue;
+  margin: 1em;
 }
 
 h5 {
@@ -28,13 +27,6 @@ h5 {
   border-bottom: 3px solid blue;
   margin: 1em 2em;
 }
-
-/*hr {
-  border-top-width: medium;
-  border-radius: 2px;
-  border-color: blue;
-  margin: 0 2em 1em 2em;
-}*/
 
 .player {
 }
@@ -65,21 +57,64 @@ button {
   border: 1px solid blue;
   background-color: white;
 }
+/*
+
+      let artistNameText = document.createElement('h2');
+      let trackNameText = document.createElement('h3');
+      let artworkUrl100Img = document.createElement('img');
+      let anchorContainer = document.createElement('a');
+      let collectionNameText = document.createElement('h4');
+      let resultContainer = document.createElement('div');*/
 
 .results {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  margin: 0;
 }
 
-.artist {
-  flex-basis: 25%;
-  padding-top: 2em;
+.results div {
+  flex-basis: 20%;
+  /*padding: 1em;
+  margin: 1em 2em;
+  width: 150px;*/
 }
 
 img {
-  border: 2px solid #9a1111;
+  border: 2px solid blue;
   border-radius: 4px;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
+  margin-top: 2em;
+  box-shadow: -2px -2px 5px 0px white;
+}
+
+h2 {
+  font-family: 'Roboto', serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: 'Roboto', serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 1px 1px 5px white;
+  margin: .5em 1em 0 1em;
+  line-height: 16px;
+}
+
+h4 {
+  font-family: 'Roboto', serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h3:hover {
+  color: red;
 }
