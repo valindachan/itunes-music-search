@@ -53,6 +53,7 @@ function search() {
 
       anchorContainer.appendChild(artworkUrl100Img)
       anchorContainer.appendChild(trackNameText)
+      anchorContainer.appendChild(collectionNameText)
       anchorContainer.appendChild(artistNameText)
       resultContainer.appendChild(anchorContainer)
       results.appendChild(resultContainer)
