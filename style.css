@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+header img {
+  width: 250px;
+}
+
 .container {
 }
 
@@ -77,7 +81,7 @@ button {
   padding-top: 2em;
 }
 
-img {
+.results img {
   border: 2px solid #9a1111;
   border-radius: 4px;
   width: 100px;
